@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		EA19B45C193FF910008EBE9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19B45B193FF910008EBE9E /* AppDelegate.swift */; };
-		EA19B45E193FF910008EBE9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19B45D193FF910008EBE9E /* ViewController.swift */; };
 		EA19B461193FF910008EBE9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA19B45F193FF910008EBE9E /* Main.storyboard */; };
 		EA19B463193FF910008EBE9E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA19B462193FF910008EBE9E /* Images.xcassets */; };
 		EA19B46F193FF910008EBE9E /* Swift_HelloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19B46E193FF910008EBE9E /* Swift_HelloWorldTests.swift */; };
+		EA19B479194F1B04008EBE9E /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19B478194F1B04008EBE9E /* SearchResultsViewController.swift */; };
+		EA19B47B194F1C28008EBE9E /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19B47A194F1C28008EBE9E /* APIController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,12 +29,13 @@
 		EA19B456193FF910008EBE9E /* Swift-HelloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-HelloWorld.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA19B45A193FF910008EBE9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA19B45B193FF910008EBE9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA19B45D193FF910008EBE9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EA19B460193FF910008EBE9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EA19B462193FF910008EBE9E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		EA19B468193FF910008EBE9E /* Swift-HelloWorldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Swift-HelloWorldTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA19B46D193FF910008EBE9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA19B46E193FF910008EBE9E /* Swift_HelloWorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_HelloWorldTests.swift; sourceTree = "<group>"; };
+		EA19B478194F1B04008EBE9E /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		EA19B47A194F1C28008EBE9E /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,7 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				EA19B45B193FF910008EBE9E /* AppDelegate.swift */,
-				EA19B45D193FF910008EBE9E /* ViewController.swift */,
+				EA19B47A194F1C28008EBE9E /* APIController.swift */,
+				EA19B478194F1B04008EBE9E /* SearchResultsViewController.swift */,
 				EA19B45F193FF910008EBE9E /* Main.storyboard */,
 				EA19B462193FF910008EBE9E /* Images.xcassets */,
 				EA19B459193FF910008EBE9E /* Supporting Files */,
@@ -208,8 +211,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA19B45E193FF910008EBE9E /* ViewController.swift in Sources */,
+				EA19B479194F1B04008EBE9E /* SearchResultsViewController.swift in Sources */,
 				EA19B45C193FF910008EBE9E /* AppDelegate.swift in Sources */,
+				EA19B47B194F1C28008EBE9E /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,6 +403,7 @@
 				EA19B474193FF910008EBE9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA19B475193FF910008EBE9E /* Build configuration list for PBXNativeTarget "Swift-HelloWorldTests" */ = {
 			isa = XCConfigurationList;
@@ -407,6 +412,7 @@
 				EA19B477193FF910008EBE9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

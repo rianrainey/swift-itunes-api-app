@@ -1,24 +1,22 @@
 //
-//  ViewController.swift
-//  TestSwift
+//  APIController.swift
+//  Swift-HelloWorld
 //
-//  Created by Jameson Quave on 6/2/14.
-//  Copyright (c) 2014 JQ Software LLC. All rights reserved.
+//  Created by Rian Rainey on 6/16/14.
+//  Copyright (c) 2014 Rian Rainey. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSURLConnectionDelegate, NSURLConnectionDataDelegate {
+protocol APIControllerProtocol {
+    func didRecieveAPIResults(results: NSDictionary)
+}
+
+class APIController: NSObject {
     
-    @IBOutlet var appsTableView : UITableView
+    var delegate: APIControllerProtocol?
     var data: NSMutableData = NSMutableData()
-    var tableData: NSArray = NSArray()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        searchItunesFor("Angry Birds");
-    }
-    
+
     func searchItunesFor(searchTerm: String) {
         
         // The iTunes API wants multiple terms separated by + symbols, so replace spaces with + signs
@@ -36,35 +34,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         connection.start()
     }
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
-        return tableData.count
-    }
-    
-    
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "MyTestCell")
-        
-        var rowData: NSDictionary = self.tableData[indexPath.row] as NSDictionary
-        
-        cell.text = rowData["trackName"] as String
-        
-        // Grab the artworkUrl60 key to get an image URL for the app's thumbnail
-        var urlString: NSString = rowData["artworkUrl60"] as NSString
-        var imgURL: NSURL = NSURL(string: urlString)
-        
-        // Download an NSData representation of the image at the URL
-        var imgData: NSData = NSData(contentsOfURL: imgURL)
-        cell.image = UIImage(data: imgData)
-        
-        // Get the formatted price string for display in the subtitle
-        var formattedPrice: NSString = rowData["formattedPrice"] as NSString
-        
-        cell.detailTextLabel.text = formattedPrice
-        
-        return cell
-    }
-    
-    
     func connection(connection: NSURLConnection!, didFailWithError error: NSError!) {
         println("Connection failed.\(error.localizedDescription)")
     }
@@ -72,11 +41,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func connection(connection: NSURLConnection, didRecieveResponse response: NSURLResponse)  {
         println("Recieved response")
     }
-    
-    
-    
-    
-    
     
     func connection(didReceiveResponse: NSURLConnection!, didReceiveResponse response: NSURLResponse!) {
         // Recieved a new request, clear out the data object
@@ -97,13 +61,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         var err: NSError
         var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as NSDictionary
         
-        if jsonResult.count>0 && jsonResult["results"].count>0 {
-            var results: NSArray = jsonResult["results"] as NSArray
-            self.tableData = results
-            self.appsTableView.reloadData()
-            
-        }
+        // Now send the JSON result to our delegate object
+        delegate?.didRecieveAPIResults(jsonResult)
         
     }
-    
+
 }
