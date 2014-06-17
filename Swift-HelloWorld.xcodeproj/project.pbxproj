@@ -13,6 +13,7 @@
 		EA19B46F193FF910008EBE9E /* Swift_HelloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19B46E193FF910008EBE9E /* Swift_HelloWorldTests.swift */; };
 		EA19B479194F1B04008EBE9E /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19B478194F1B04008EBE9E /* SearchResultsViewController.swift */; };
 		EA19B47B194F1C28008EBE9E /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA19B47A194F1C28008EBE9E /* APIController.swift */; };
+		EA19B47D19506474008EBE9E /* Blank52.png in Resources */ = {isa = PBXBuildFile; fileRef = EA19B47C19506474008EBE9E /* Blank52.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		EA19B46E193FF910008EBE9E /* Swift_HelloWorldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swift_HelloWorldTests.swift; sourceTree = "<group>"; };
 		EA19B478194F1B04008EBE9E /* SearchResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
 		EA19B47A194F1C28008EBE9E /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		EA19B47C19506474008EBE9E /* Blank52.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blank52.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				EA19B47A194F1C28008EBE9E /* APIController.swift */,
 				EA19B478194F1B04008EBE9E /* SearchResultsViewController.swift */,
 				EA19B45F193FF910008EBE9E /* Main.storyboard */,
+				EA19B47C19506474008EBE9E /* Blank52.png */,
 				EA19B462193FF910008EBE9E /* Images.xcassets */,
 				EA19B459193FF910008EBE9E /* Supporting Files */,
 			);
@@ -192,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA19B47D19506474008EBE9E /* Blank52.png in Resources */,
 				EA19B461193FF910008EBE9E /* Main.storyboard in Resources */,
 				EA19B463193FF910008EBE9E /* Images.xcassets in Resources */,
 			);
